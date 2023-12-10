@@ -21,5 +21,5 @@ public class ParameterizedTests {
 }
 
 /**
- * this is a command push testt
+ * this is a command push test
  */
