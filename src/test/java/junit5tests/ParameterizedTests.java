@@ -4,6 +4,9 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ParameterizedTests {
 
@@ -52,21 +55,13 @@ public class ParameterizedTests {
     }
 
     @ParameterizedTest
-    @MethodSource(value = "junit5tests.paramprovider#sourceString")
-    void methodSource_String(String param1){
+    @MethodSource(value = "sourceString")
+    void methodSource_String(String param1) {
         System.out.println("param1 = " + param1);
     }
-
-    @ParameterizedTest
-    @MethodSource(value = "junit5tests.paramprovider#sourceStringStream")
-    void methodSource_StringStream(String param1){
-        System.out.println("param1 = " + param1);
+    List<String> sourceString(){
+     return Arrays.asList("test1","test2","test3");
     }
 
-    @ParameterizedTest
-    @MethodSource(value = "junit5tests.paramprovider#sourceList_StringDouble")
-    void methodSource_StringDouble(String param1, double param2){
-        System.out.println("param1 = " + param1 + ", param2 = " + param2);
-    }
 
 }

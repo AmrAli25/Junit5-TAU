@@ -1,9 +1,12 @@
 package junit5tests;
 
+import listeners.Listener;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+@ExtendWith(Listener.class)
 public class DisabledEnabledTest {
 
     @Test
